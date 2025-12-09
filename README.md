@@ -14,19 +14,50 @@ A simple web scraping tool with a GUI interface that crawls product listings fro
 
 ## Installation
 
-1. Install the required dependencies:
+### Standard Installation
+
+1. Create a virtual environment:
+```bash
+python3 -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+```
+
+2. Install the required dependencies:
 ```bash
 pip install -r requirements.txt
 ```
 
+### macOS Users (Quick Fix)
+
+If you encounter SSL or Tkinter errors on macOS, run:
+```bash
+source venv/bin/activate
+./macos_fix.sh
+```
+
+Then use the web interface instead:
+```bash
+python web_gui.py
+```
+
+See [MACOS_SETUP.md](MACOS_SETUP.md) for detailed troubleshooting.
+
 ## Usage
 
-Run the application:
+### Option 1: Desktop GUI (Tkinter)
+Run the desktop application:
 ```bash
 python main_gui.py
 ```
 
-The GUI will allow you to:
+### Option 2: Web Interface (Works on all platforms)
+If you have Tkinter issues on macOS, use the web interface:
+```bash
+python web_gui.py
+```
+Then open your browser to: http://localhost:5000
+
+Both interfaces allow you to:
 1. Enter the number of pages to scrape (1-50)
 2. Choose output format (CSV or Excel)
 3. Start the scraping process
